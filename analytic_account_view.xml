@@ -2,16 +2,17 @@
 <openerp>
 	<data>
 		<!-- Add a tab with attachements -->
-		<record model="ir.ui.view" id="account_analytic_attachements_form_view">
-            <field name="name">analytic.account.attachements</field>
-            <field name="model">account.analytic.account</field>
-            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+		<record model="ir.ui.view" id="sale_subscription_attachements_form_view">
+            <field name="name">sale.subscription.attachements</field>
+            <field name="model">sale.subscription</field>
+            <field name="inherit_id" ref="sale_contract.sale_subscription_view_form"/>
             <field name="arch" type="xml">
-				<page name="contract_page" position="after">
-					<page string="Attachements">
-							<field name="attachments_ids" widget="many2many_binary" string="Attach a file"/>
-					</page>
-				</page>
+				<!-- Attachments -->
+                <xpath expr="//page[@id='settings']" position="after">
+                    <page string="Attachments">
+                        <field name="attachments_ids" widget="many2many_binary" string="Attach a file"/>
+                    </page>
+                </xpath>
             </field>
         </record>
 	</data>
